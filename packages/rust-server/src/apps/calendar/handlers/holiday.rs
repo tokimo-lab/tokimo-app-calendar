@@ -10,14 +10,12 @@ use crate::AppState;
 use crate::handlers::ok;
 
 /// Shared `NagerDate` client to persist the in-memory cache across requests.
-static NAGER_CLIENT: OnceLock<rust_client_api::metadata_providers::nager_date::NagerDateClient> =
-    OnceLock::new();
+static NAGER_CLIENT: OnceLock<rust_client_api::metadata_providers::nager_date::NagerDateClient> = OnceLock::new();
 
 fn get_nager_client(
     http: reqwest::Client,
 ) -> &'static rust_client_api::metadata_providers::nager_date::NagerDateClient {
-    NAGER_CLIENT
-        .get_or_init(|| rust_client_api::metadata_providers::nager_date::NagerDateClient::new(http))
+    NAGER_CLIENT.get_or_init(|| rust_client_api::metadata_providers::nager_date::NagerDateClient::new(http))
 }
 
 #[derive(Deserialize)]
@@ -75,16 +73,10 @@ pub struct AvailableCountryOutput {
     pub name: String,
 }
 
-pub async fn get_holidays(
-    State(state): State<Arc<AppState>>,
-    Query(params): Query<HolidayQuery>,
-) -> impl IntoResponse {
+pub async fn get_holidays(State(state): State<Arc<AppState>>, Query(params): Query<HolidayQuery>) -> impl IntoResponse {
     let client = get_nager_client(state.http_client.clone());
 
-    match client
-        .get_public_holidays(params.year, &params.country)
-        .await
-    {
+    match client.get_public_holidays(params.year, &params.country).await {
         Ok(holidays) => {
             let output: Vec<PublicHolidayOutput> = holidays
                 .into_iter()
