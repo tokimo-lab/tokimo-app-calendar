@@ -1,4 +1,4 @@
-import { Select, Spin, Tooltip } from "@tokiomo/components";
+import { Select, Spin, Tooltip } from "@tokimo/ui";
 import {
   CalendarDays,
   ChevronLeft,
