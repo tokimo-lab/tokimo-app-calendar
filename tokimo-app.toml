@@ -1,0 +1,22 @@
+# Tokimo app manifest
+[app]
+id          = "calendar"
+display     = "Calendar"
+version     = "0.1.0"
+description = "Calendar with public holiday data for Tokimo OS"
+
+[runtime]
+lifecycle    = "resident"
+binary       = "tokimo-app-calendar"
+ui_dist      = "ui/dist"
+
+[ui]
+entry        = "assets/index.js"
+window_type  = "calendar"
+category     = "app"
+icon         = "CalendarDays"
+image        = "icon.png"
+color        = "#ef4444"
+width        = 900
+height       = 680
+full_bleed   = true
