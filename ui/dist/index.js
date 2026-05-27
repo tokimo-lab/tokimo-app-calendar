@@ -459,7 +459,7 @@ function Z({ locale: e }) {
 			className: "flex flex-1 flex-col",
 			children: [
 				/* @__PURE__ */ S("div", {
-					className: "flex items-center justify-between border-b border-black/6 px-5 pb-3 pt-3 dark:border-white/8",
+					className: "flex items-center justify-between border-b border-black/6 px-5 pb-3 pt-3 dark:border-transparent",
 					children: [
 						/* @__PURE__ */ S("div", {
 							className: "flex items-center gap-1",
@@ -506,7 +506,7 @@ function Z({ locale: e }) {
 					]
 				}),
 				/* @__PURE__ */ x("div", {
-					className: "grid grid-cols-7 border-b border-black/4 px-3 dark:border-white/6",
+					className: "grid grid-cols-7 border-b border-black/4 px-3 dark:border-transparent",
 					children: r.map((e, t) => /* @__PURE__ */ x("div", {
 						className: `flex h-8 items-center justify-center text-xs font-medium ${t === 0 || t === 6 ? "text-red-500/70 dark:text-red-400/70" : "text-fg-muted"}`,
 						children: e
@@ -537,7 +537,7 @@ function Z({ locale: e }) {
 					})]
 				}),
 				f != null && Q && /* @__PURE__ */ S("div", {
-					className: "flex items-center gap-3 border-t border-black/6 px-5 py-2.5 dark:border-white/8",
+					className: "flex items-center gap-3 border-t border-black/6 px-5 py-2.5 dark:border-transparent",
 					children: [
 						/* @__PURE__ */ x(ee, {
 							size: 16,
@@ -579,10 +579,10 @@ function Z({ locale: e }) {
 				})
 			]
 		}), /* @__PURE__ */ S("div", {
-			className: "flex w-[240px] shrink-0 flex-col border-l border-black/6 dark:border-white/8",
+			className: "flex w-[240px] shrink-0 flex-col border-l border-black/6 dark:border-transparent",
 			children: [
 				/* @__PURE__ */ x("div", {
-					className: "border-b border-black/6 px-3 py-3 dark:border-white/8",
+					className: "border-b border-black/6 px-3 py-3 dark:border-transparent",
 					children: /* @__PURE__ */ x(o, {
 						value: m,
 						onChange: (e) => h(e),
@@ -591,7 +591,7 @@ function Z({ locale: e }) {
 					})
 				}),
 				/* @__PURE__ */ S("div", {
-					className: "border-b border-black/6 px-4 py-3 dark:border-white/8",
+					className: "border-b border-black/6 px-4 py-3 dark:border-transparent",
 					children: [/* @__PURE__ */ x("p", {
 						className: "text-[40px] font-light leading-none text-red-500 dark:text-red-400",
 						children: i.getDate()

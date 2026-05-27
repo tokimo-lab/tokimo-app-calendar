@@ -536,7 +536,7 @@ export default function CalendarPage({ locale }: { locale: string }) {
       {/* ── Main Calendar Area ── */}
       <div className="flex flex-1 flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between border-b border-black/6 px-5 pb-3 pt-3 dark:border-white/8">
+        <div className="flex items-center justify-between border-b border-black/6 px-5 pb-3 pt-3 dark:border-transparent">
           <div className="flex items-center gap-1">
             <MonthNavButton onClick={goToPrevYear}>
               <ChevronLeft size={14} />
@@ -574,7 +574,7 @@ export default function CalendarPage({ locale }: { locale: string }) {
         </div>
 
         {/* Weekday headers */}
-        <div className="grid grid-cols-7 border-b border-black/4 px-3 dark:border-white/6">
+        <div className="grid grid-cols-7 border-b border-black/4 px-3 dark:border-transparent">
           {weekdayLabels.map((lbl, idx) => (
             <div
               key={lbl}
@@ -632,7 +632,7 @@ export default function CalendarPage({ locale }: { locale: string }) {
 
         {/* Selected day detail bar */}
         {selectedDay != null && selectedHoliday && (
-          <div className="flex items-center gap-3 border-t border-black/6 px-5 py-2.5 dark:border-white/8">
+          <div className="flex items-center gap-3 border-t border-black/6 px-5 py-2.5 dark:border-transparent">
             <CalendarDays
               size={16}
               className="shrink-0 text-red-500 dark:text-red-400"
@@ -668,9 +668,9 @@ export default function CalendarPage({ locale }: { locale: string }) {
       </div>
 
       {/* ── Sidebar ── */}
-      <div className="flex w-[240px] shrink-0 flex-col border-l border-black/6 dark:border-white/8">
+      <div className="flex w-[240px] shrink-0 flex-col border-l border-black/6 dark:border-transparent">
         {/* Country selector */}
-        <div className="border-b border-black/6 px-3 py-3 dark:border-white/8">
+        <div className="border-b border-black/6 px-3 py-3 dark:border-transparent">
           <Select
             value={country}
             onChange={(val: string) => setCountry(val)}
@@ -680,7 +680,7 @@ export default function CalendarPage({ locale }: { locale: string }) {
         </div>
 
         {/* Today info */}
-        <div className="border-b border-black/6 px-4 py-3 dark:border-white/8">
+        <div className="border-b border-black/6 px-4 py-3 dark:border-transparent">
           <p className="text-[40px] font-light leading-none text-red-500 dark:text-red-400">
             {today.getDate()}
           </p>
