@@ -15,7 +15,6 @@ entry        = "assets/index.js"
 window_type  = "calendar"
 category     = "app"
 icon         = "CalendarDays"
-image        = "icon.png"
 color        = "#ef4444"
 width        = 900
 height       = 680
