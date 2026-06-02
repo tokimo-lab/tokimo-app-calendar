@@ -11,7 +11,7 @@ repository  = "https://github.com/tokimo-lab/tokimo-app-calendar"
 tokimo-bus-client   = { git = "https://github.com/tokimo-lab/tokimo-bus.git", rev = "80063cb4391c5249df9cd3b570b1eabed64c3843" }
 tokimo-bus-protocol = { git = "https://github.com/tokimo-lab/tokimo-bus.git", rev = "80063cb4391c5249df9cd3b570b1eabed64c3843", features = ["axum"] }
 tokimo-bus-cli      = { git = "https://github.com/tokimo-lab/tokimo-bus.git", rev = "80063cb4391c5249df9cd3b570b1eabed64c3843" }
-rust-client-api = { path = "../../packages/rust-client-api" }
+tokimo-package-client-api = { path = "../../packages/tokimo-package-client-api" }
 
 tokio              = { version = "1", features = ["rt-multi-thread", "macros", "time", "signal"] }
 tracing            = "0.1"

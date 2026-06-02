@@ -15,14 +15,14 @@ pub struct AppCtx {
     pub http: reqwest::Client,
 }
 
-static NAGER_CLIENT: OnceLock<rust_client_api::metadata_providers::nager_date::NagerDateClient> =
+static NAGER_CLIENT: OnceLock<tokimo_package_client_api::metadata_providers::nager_date::NagerDateClient> =
     OnceLock::new();
 
 fn get_nager_client(
     http: reqwest::Client,
-) -> &'static rust_client_api::metadata_providers::nager_date::NagerDateClient {
+) -> &'static tokimo_package_client_api::metadata_providers::nager_date::NagerDateClient {
     NAGER_CLIENT.get_or_init(|| {
-        rust_client_api::metadata_providers::nager_date::NagerDateClient::new(http)
+        tokimo_package_client_api::metadata_providers::nager_date::NagerDateClient::new(http)
     })
 }
 
