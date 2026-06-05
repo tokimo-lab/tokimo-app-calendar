@@ -3,10 +3,10 @@
 use std::sync::OnceLock;
 
 use axum::{
-    extract::{Query, State},
-    response::IntoResponse,
     Json,
+    extract::{Query, State},
     http::StatusCode,
+    response::IntoResponse,
 };
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -15,8 +15,9 @@ pub struct AppCtx {
     pub http: reqwest::Client,
 }
 
-static NAGER_CLIENT: OnceLock<tokimo_package_client_api::metadata_providers::nager_date::NagerDateClient> =
-    OnceLock::new();
+static NAGER_CLIENT: OnceLock<
+    tokimo_package_client_api::metadata_providers::nager_date::NagerDateClient,
+> = OnceLock::new();
 
 fn get_nager_client(
     http: reqwest::Client,
@@ -70,7 +71,10 @@ pub struct AvailableCountryOutput {
 }
 
 fn app_error(msg: String) -> impl IntoResponse {
-    (StatusCode::BAD_REQUEST, Json(serde_json::json!({ "error": msg })))
+    (
+        StatusCode::BAD_REQUEST,
+        Json(serde_json::json!({ "error": msg })),
+    )
 }
 
 pub async fn get_holidays(
@@ -78,7 +82,10 @@ pub async fn get_holidays(
     Query(params): Query<HolidayQuery>,
 ) -> impl IntoResponse {
     let client = get_nager_client(ctx.http.clone());
-    match client.get_public_holidays(params.year, &params.country).await {
+    match client
+        .get_public_holidays(params.year, &params.country)
+        .await
+    {
         Ok(holidays) => {
             let output: Vec<PublicHolidayOutput> = holidays
                 .into_iter()
