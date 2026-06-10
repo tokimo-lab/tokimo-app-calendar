@@ -534,7 +534,7 @@ export default function CalendarPage({ locale }: { locale: string }) {
   return (
     <div className="flex h-full select-none">
       {/* ── Main Calendar Area ── */}
-      <div className="flex flex-1 flex-col">
+      <div className="flex flex-1 flex-col bg-[var(--color-surface-content)]">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-black/6 px-5 pb-3 pt-3 dark:border-transparent">
           <div className="flex items-center gap-1">
