@@ -15,11 +15,7 @@ use tokimo_bus_client::{BusClient, ClientConfig};
 use tracing::{error, info};
 
 #[derive(Parser, Debug)]
-#[command(
-    name = "tokimo-app-calendar",
-    about = "Calendar — Tokimo sub-app",
-    term_width = 100
-)]
+#[command(name = "tokimo-app-calendar", about = "Calendar — Tokimo sub-app", term_width = 100)]
 struct Cli {}
 
 #[tokio::main]
@@ -29,9 +25,8 @@ async fn main() -> anyhow::Result<()> {
     if std::env::var_os("TOKIMO_BUS_SOCKET").is_some() {
         tracing_subscriber::fmt()
             .with_env_filter(
-                tracing_subscriber::EnvFilter::try_from_default_env().unwrap_or_else(|_| {
-                    "info,tokimo_bus_client=info,tokimo_app_calendar=debug".into()
-                }),
+                tracing_subscriber::EnvFilter::try_from_default_env()
+                    .unwrap_or_else(|_| "info,tokimo_bus_client=info,tokimo_app_calendar=debug".into()),
             )
             .init();
         if let Err(e) = run_server().await {
