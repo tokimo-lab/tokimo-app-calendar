@@ -41,6 +41,11 @@ export default defineApp({
     category: "app",
     fullBleed: true,
   },
+  standalone: {
+    createWindow: (route) => ({ type: "calendar", route }),
+    getRoute: (window) =>
+      window.type === "calendar" ? (window.route ?? "/") : null,
+  },
   mount(container, ctx): Dispose {
     const queryClient = new QueryClient({
       defaultOptions: { queries: { retry: 1, staleTime: 30_000 } },
