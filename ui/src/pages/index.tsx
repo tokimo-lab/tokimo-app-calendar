@@ -534,7 +534,7 @@ export default function CalendarPage({ locale }: { locale: string }) {
   return (
     <div className="flex h-full select-none">
       {/* ── Main Calendar Area ── */}
-      <div className="flex flex-1 flex-col bg-[var(--color-surface-content)]">
+      <div className="app-safe-area flex flex-1 flex-col bg-[var(--color-surface-content)]">
         {/* Header */}
         <div className="flex items-center justify-between border-b border-black/6 px-5 pb-3 pt-3 dark:border-transparent">
           <div className="flex items-center gap-1">
@@ -668,7 +668,7 @@ export default function CalendarPage({ locale }: { locale: string }) {
       </div>
 
       {/* ── Sidebar ── */}
-      <div className="flex w-[240px] shrink-0 flex-col border-l border-black/6 dark:border-transparent">
+      <div className="app-safe-area flex w-[240px] shrink-0 flex-col border-l border-black/6 bg-surface-sidebar dark:border-transparent">
         {/* Country selector */}
         <div className="border-b border-black/6 px-3 py-3 dark:border-transparent">
           <Select
